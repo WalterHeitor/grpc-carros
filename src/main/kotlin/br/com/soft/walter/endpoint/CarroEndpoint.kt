@@ -5,12 +5,11 @@ import br.com.soft.walter.GrpcCarrosResponse
 import br.com.soft.walter.GrpcCarrosServiceGrpc
 import br.com.soft.walter.cadastro.doumaim.Carro
 import br.com.soft.walter.repository.CarroRepository
-import br.com.soft.walter.response.CarroResponse
 import io.grpc.Status
 import io.grpc.stub.StreamObserver
-import org.hibernate.exception.ConstraintViolationException
 import javax.inject.Inject
 import javax.inject.Singleton
+import javax.validation.ConstraintViolationException
 
 @Singleton
 class CarroEndpoint(@Inject val carroRepository: CarroRepository) : GrpcCarrosServiceGrpc.GrpcCarrosServiceImplBase() {
@@ -34,6 +33,7 @@ class CarroEndpoint(@Inject val carroRepository: CarroRepository) : GrpcCarrosSe
             responseObserver.onError(Status.INVALID_ARGUMENT
                 .withDescription("dados de entrada invalidos.")
                 .asRuntimeException())
+            return
         }
         responseObserver.onNext(GrpcCarrosResponse.newBuilder()
             .setId(carro.id!!)
