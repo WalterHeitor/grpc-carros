@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+//import "google/protobuf/empty.proto";
 option java_multiple_files = true;
 option java_package = "br.com.soft.walter";
 option java_outer_classname = "GrpcCarros";
@@ -7,7 +8,7 @@ option objc_class_prefix = "HLW";
 
 package br.com.soft.walter;
 
-service GrpcCarrosService {
+service CarrosService {
   rpc adicionar (GrpcCarrosRequest) returns (GrpcCarrosResponse) {}
 }
 

@@ -1,8 +1,9 @@
 package br.com.soft.walter.endpoint
 
+import br.com.soft.walter.CarrosServiceGrpc
 import br.com.soft.walter.GrpcCarrosRequest
 import br.com.soft.walter.GrpcCarrosResponse
-import br.com.soft.walter.GrpcCarrosServiceGrpc
+
 import br.com.soft.walter.cadastro.doumaim.Carro
 import br.com.soft.walter.repository.CarroRepository
 import io.grpc.Status
@@ -12,7 +13,7 @@ import javax.inject.Singleton
 import javax.validation.ConstraintViolationException
 
 @Singleton
-class CarroEndpoint(@Inject val carroRepository: CarroRepository) : GrpcCarrosServiceGrpc.GrpcCarrosServiceImplBase() {
+class CarroEndpoint(@Inject val carroRepository: CarroRepository): CarrosServiceGrpc.CarrosServiceImplBase()  {
     override fun adicionar(
         request: GrpcCarrosRequest,
         responseObserver: StreamObserver<GrpcCarrosResponse>,

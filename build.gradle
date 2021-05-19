@@ -1,11 +1,18 @@
+
+
 plugins {
     id("org.jetbrains.kotlin.jvm") version "1.4.30"
     id("org.jetbrains.kotlin.kapt") version "1.4.30"
     id("org.jetbrains.kotlin.plugin.allopen") version "1.4.30"
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.4.30"
     id("org.jetbrains.kotlin.plugin.jpa") version "1.4.30"
     id("com.github.johnrengelman.shadow") version "6.1.0"
     id("io.micronaut.application") version "1.4.5"
     id("com.google.protobuf") version "0.8.13"
+}
+
+kapt {
+    correctErrorTypes true
 }
 
 version = "0.1"
@@ -41,6 +48,21 @@ dependencies {
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
     testImplementation("io.micronaut:micronaut-http-client")
+
+   // api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3")
+    api("io.grpc:grpc-kotlin-stub:1.0.0")
+
+
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib
+   // implementation "org.jetbrains.kotlin:version:1.4.31"
+
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-core
+    implementation group: 'org.jetbrains.kotlinx', name: 'kotlinx-coroutines-core', version: '1.4.2'
+
+// https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib
+//    implementation group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib', version: '1.5.0'
+
+
 }
 
 
@@ -65,10 +87,12 @@ tasks {
 
 
 }
+
 sourceSets {
     main {
         java {
             srcDirs("build/generated/source/proto/main/grpc")
+            srcDirs 'build/generated/source/proto/main/grpckt'
             srcDirs("build/generated/source/proto/main/java")
         }
     }
@@ -78,8 +102,19 @@ protobuf {
     protoc { artifact = "com.google.protobuf:protoc:3.14.0" }
     plugins {
         grpc { artifact = "io.grpc:protoc-gen-grpc-java:1.33.1" }
+       // grpckt {artifact = "io.grpc:protoc-gen-grpc-kotlin:0.1.2"}
+        grpckt { artifact = "io.grpc:protoc-gen-grpc-kotlin:1.0.0:jdk7@jar"}
+    }
+
+    generateProtoTasks {
+
     }
     generateProtoTasks {
-        all()*.plugins { grpc {} }
+        all()*.plugins {
+            grpc {}
+            grpckt {}
+        }
     }
 }
+
+
