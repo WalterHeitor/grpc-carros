@@ -4,5 +4,5 @@ import br.com.soft.walter.cadastro.doumaim.Carro
 
 
 interface FindCarroUseCase  {
-     fun findByCarroId(id: Long): Carro
+     fun findByCarroId(placa: String): Carro
 }
