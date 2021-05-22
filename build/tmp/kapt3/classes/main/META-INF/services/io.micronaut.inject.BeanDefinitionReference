@@ -1,4 +1,3 @@
 br.com.soft.walter.adapters.$CarroEndpointDefinitionClass
-br.com.soft.walter.endpoint.$CarroEndpointDefinitionClass
-br.com.soft.walter.usecase.ports.services.$FindCarroUseCaseImpDefinitionClass
 br.com.soft.walter.repository.$CarroRepository$InterceptedDefinitionClass
+br.com.soft.walter.usecase.ports.services.$FindCarroUseCaseImpDefinitionClass

@@ -1,16 +1,22 @@
 package br.com.soft.walter.usecase.ports.services
 
 import br.com.soft.walter.cadastro.doumaim.Carro
+import br.com.soft.walter.cadastro.exceptions.CarExistException
+import br.com.soft.walter.cadastro.exceptions.CarNotFoundException
 import br.com.soft.walter.repository.CarroRepository
 import br.com.soft.walter.usecase.ports.output.CarroGateway
-import io.micronaut.context.annotation.Context
+import javax.inject.Singleton
 
-@Context
+@Singleton
 open class FindCarroUseCaseImp(private val carroRepository: CarroRepository):CarroGateway {
-    override fun findByCarroId(placa: String): Carro {
-        val possivelCarro = carroRepository.findByPlaca(placa)
-        if (possivelCarro.isEmpty){
-            println("carro nao encontrado")
+    override fun findByCarro(carro: Carro): Carro {
+        val possivelCarro = carroRepository.findByPlaca(carro.placa)
+
+            ?: throw CarNotFoundException()
+
+        if (carroRepository.existsByPlaca(possivelCarro.get().placa)){
+            println("car with ${possivelCarro.get().placa} plate already exists")
+            throw CarExistException()
         }
         return possivelCarro.get()
     }
