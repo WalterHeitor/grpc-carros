@@ -5,12 +5,8 @@ import br.com.soft.walter.GrpcCarrosRequest
 import br.com.soft.walter.GrpcCarrosResponse
 import br.com.soft.walter.adapters.mapper.toCarro
 import br.com.soft.walter.adapters.mapper.toResponse
-import br.com.soft.walter.cadastro.doumaim.Carro
-import br.com.soft.walter.cadastro.exceptions.CarExistException
-import br.com.soft.walter.repository.CarroRepository
+import br.com.soft.walter.usecase.repository.CarroRepository
 import br.com.soft.walter.usecase.ports.output.CarroGateway
-import io.grpc.Status
-import rx.plugins.RxJavaHooks.onError
 
 import javax.inject.Singleton
 

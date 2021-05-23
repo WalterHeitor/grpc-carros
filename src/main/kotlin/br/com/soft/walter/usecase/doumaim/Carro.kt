@@ -1,4 +1,4 @@
-package br.com.soft.walter.cadastro.doumaim
+package br.com.soft.walter.usecase.doumaim
 
 import javax.persistence.*
 import javax.validation.constraints.NotBlank

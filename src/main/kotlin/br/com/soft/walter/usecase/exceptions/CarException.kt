@@ -1,4 +1,4 @@
-package br.com.soft.walter.cadastro.exceptions
+package br.com.soft.walter.usecase.exceptions
 
 import io.grpc.StatusRuntimeException
 import java.lang.RuntimeException

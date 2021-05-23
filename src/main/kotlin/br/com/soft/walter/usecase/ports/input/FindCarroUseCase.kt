@@ -1,6 +1,6 @@
 package br.com.soft.walter.usecase.ports.input
 
-import br.com.soft.walter.cadastro.doumaim.Carro
+import br.com.soft.walter.usecase.doumaim.Carro
 
 
 interface FindCarroUseCase  {

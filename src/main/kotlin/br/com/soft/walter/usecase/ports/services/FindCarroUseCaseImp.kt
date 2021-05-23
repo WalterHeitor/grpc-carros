@@ -1,8 +1,8 @@
 package br.com.soft.walter.usecase.ports.services
 
-import br.com.soft.walter.cadastro.doumaim.Carro
-import br.com.soft.walter.cadastro.exceptions.CarExistException
-import br.com.soft.walter.repository.CarroRepository
+import br.com.soft.walter.usecase.doumaim.Carro
+import br.com.soft.walter.usecase.exceptions.CarExistException
+import br.com.soft.walter.usecase.repository.CarroRepository
 import br.com.soft.walter.usecase.ports.output.CarroGateway
 import javax.inject.Singleton
 
