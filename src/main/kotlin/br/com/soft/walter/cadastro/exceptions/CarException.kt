@@ -1,9 +1,9 @@
 package br.com.soft.walter.cadastro.exceptions
 
-import io.grpc.Status
+import io.grpc.StatusRuntimeException
+import java.lang.RuntimeException
 
 abstract class CarException(
     override val message: String,
-    open val status: Status = Status.INTERNAL
-) : Throwable(message){
-}
+    open val status: StatusRuntimeException
+) : RuntimeException(message, status)

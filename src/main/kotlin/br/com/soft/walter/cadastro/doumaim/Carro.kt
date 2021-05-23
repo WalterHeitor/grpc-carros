@@ -14,4 +14,8 @@ class Carro(
 ) {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null
+    override fun toString(): String {
+        return "Carro(modelo='$modelo', placa='$placa', id=$id)"
+    }
+
 }
