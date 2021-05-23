@@ -36,4 +36,28 @@ public interface GrpcCarrosResponseOrBuilder extends
    * @return The id.
    */
   long getId();
+
+  /**
+   * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+   */
+  java.util.List<br.com.soft.walter.GrpcUsuario> 
+      getUsuariosList();
+  /**
+   * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+   */
+  br.com.soft.walter.GrpcUsuario getUsuarios(int index);
+  /**
+   * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+   */
+  int getUsuariosCount();
+  /**
+   * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+   */
+  java.util.List<? extends br.com.soft.walter.GrpcUsuarioOrBuilder> 
+      getUsuariosOrBuilderList();
+  /**
+   * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+   */
+  br.com.soft.walter.GrpcUsuarioOrBuilder getUsuariosOrBuilder(
+      int index);
 }

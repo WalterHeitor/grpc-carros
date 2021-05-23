@@ -15,10 +15,19 @@ service CarrosService {
 message GrpcCarrosRequest {
   string modelo = 1;
   string placa = 2;
+  string cor = 3;
+  repeated GrpcUsuario usuarios = 4;
+}
+
+message GrpcUsuario{
+  string nome = 1;
+  string cpf = 2;
+  string email = 3;
 }
 
 message GrpcCarrosResponse {
   string modelo = 1;
   string placa = 2;
   int64 id = 3;
+  repeated GrpcUsuario usuarios = 4;
 }

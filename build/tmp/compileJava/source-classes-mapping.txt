@@ -17,6 +17,10 @@ br/com/soft/walter/CarrosServiceGrpc.java
  br.com.soft.walter.CarrosServiceGrpc$MethodHandlers
 br/com/soft/walter/GrpcCarrosRequestOrBuilder.java
  br.com.soft.walter.GrpcCarrosRequestOrBuilder
+br/com/soft/walter/GrpcUsuario.java
+ br.com.soft.walter.GrpcUsuario
+ br.com.soft.walter.GrpcUsuario$1
+ br.com.soft.walter.GrpcUsuario$Builder
 br/com/soft/walter/GrpcCarros.java
  br.com.soft.walter.GrpcCarros
 br/com/soft/walter/GrpcCarrosResponse.java
@@ -25,3 +29,5 @@ br/com/soft/walter/GrpcCarrosResponse.java
  br.com.soft.walter.GrpcCarrosResponse$Builder
 br/com/soft/walter/GrpcCarrosResponseOrBuilder.java
  br.com.soft.walter.GrpcCarrosResponseOrBuilder
+br/com/soft/walter/GrpcUsuarioOrBuilder.java
+ br.com.soft.walter.GrpcUsuarioOrBuilder

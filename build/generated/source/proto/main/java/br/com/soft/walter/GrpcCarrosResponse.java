@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private GrpcCarrosResponse() {
     modelo_ = "";
     placa_ = "";
+    usuarios_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -40,6 +41,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -67,6 +69,15 @@ private static final long serialVersionUID = 0L;
             id_ = input.readInt64();
             break;
           }
+          case 34: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              usuarios_ = new java.util.ArrayList<br.com.soft.walter.GrpcUsuario>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            usuarios_.add(
+                input.readMessage(br.com.soft.walter.GrpcUsuario.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -82,6 +93,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        usuarios_ = java.util.Collections.unmodifiableList(usuarios_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -186,6 +200,46 @@ private static final long serialVersionUID = 0L;
     return id_;
   }
 
+  public static final int USUARIOS_FIELD_NUMBER = 4;
+  private java.util.List<br.com.soft.walter.GrpcUsuario> usuarios_;
+  /**
+   * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+   */
+  @java.lang.Override
+  public java.util.List<br.com.soft.walter.GrpcUsuario> getUsuariosList() {
+    return usuarios_;
+  }
+  /**
+   * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends br.com.soft.walter.GrpcUsuarioOrBuilder> 
+      getUsuariosOrBuilderList() {
+    return usuarios_;
+  }
+  /**
+   * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+   */
+  @java.lang.Override
+  public int getUsuariosCount() {
+    return usuarios_.size();
+  }
+  /**
+   * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+   */
+  @java.lang.Override
+  public br.com.soft.walter.GrpcUsuario getUsuarios(int index) {
+    return usuarios_.get(index);
+  }
+  /**
+   * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+   */
+  @java.lang.Override
+  public br.com.soft.walter.GrpcUsuarioOrBuilder getUsuariosOrBuilder(
+      int index) {
+    return usuarios_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -209,6 +263,9 @@ private static final long serialVersionUID = 0L;
     if (id_ != 0L) {
       output.writeInt64(3, id_);
     }
+    for (int i = 0; i < usuarios_.size(); i++) {
+      output.writeMessage(4, usuarios_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -227,6 +284,10 @@ private static final long serialVersionUID = 0L;
     if (id_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, id_);
+    }
+    for (int i = 0; i < usuarios_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, usuarios_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -249,6 +310,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getPlaca())) return false;
     if (getId()
         != other.getId()) return false;
+    if (!getUsuariosList()
+        .equals(other.getUsuariosList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -267,6 +330,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getId());
+    if (getUsuariosCount() > 0) {
+      hash = (37 * hash) + USUARIOS_FIELD_NUMBER;
+      hash = (53 * hash) + getUsuariosList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -395,6 +462,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getUsuariosFieldBuilder();
       }
     }
     @java.lang.Override
@@ -406,6 +474,12 @@ private static final long serialVersionUID = 0L;
 
       id_ = 0L;
 
+      if (usuariosBuilder_ == null) {
+        usuarios_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        usuariosBuilder_.clear();
+      }
       return this;
     }
 
@@ -432,9 +506,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public br.com.soft.walter.GrpcCarrosResponse buildPartial() {
       br.com.soft.walter.GrpcCarrosResponse result = new br.com.soft.walter.GrpcCarrosResponse(this);
+      int from_bitField0_ = bitField0_;
       result.modelo_ = modelo_;
       result.placa_ = placa_;
       result.id_ = id_;
+      if (usuariosBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          usuarios_ = java.util.Collections.unmodifiableList(usuarios_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.usuarios_ = usuarios_;
+      } else {
+        result.usuarios_ = usuariosBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -494,6 +578,32 @@ private static final long serialVersionUID = 0L;
       if (other.getId() != 0L) {
         setId(other.getId());
       }
+      if (usuariosBuilder_ == null) {
+        if (!other.usuarios_.isEmpty()) {
+          if (usuarios_.isEmpty()) {
+            usuarios_ = other.usuarios_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureUsuariosIsMutable();
+            usuarios_.addAll(other.usuarios_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.usuarios_.isEmpty()) {
+          if (usuariosBuilder_.isEmpty()) {
+            usuariosBuilder_.dispose();
+            usuariosBuilder_ = null;
+            usuarios_ = other.usuarios_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            usuariosBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getUsuariosFieldBuilder() : null;
+          } else {
+            usuariosBuilder_.addAllMessages(other.usuarios_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -522,6 +632,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object modelo_ = "";
     /**
@@ -704,6 +815,246 @@ private static final long serialVersionUID = 0L;
       id_ = 0L;
       onChanged();
       return this;
+    }
+
+    private java.util.List<br.com.soft.walter.GrpcUsuario> usuarios_ =
+      java.util.Collections.emptyList();
+    private void ensureUsuariosIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        usuarios_ = new java.util.ArrayList<br.com.soft.walter.GrpcUsuario>(usuarios_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        br.com.soft.walter.GrpcUsuario, br.com.soft.walter.GrpcUsuario.Builder, br.com.soft.walter.GrpcUsuarioOrBuilder> usuariosBuilder_;
+
+    /**
+     * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+     */
+    public java.util.List<br.com.soft.walter.GrpcUsuario> getUsuariosList() {
+      if (usuariosBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(usuarios_);
+      } else {
+        return usuariosBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+     */
+    public int getUsuariosCount() {
+      if (usuariosBuilder_ == null) {
+        return usuarios_.size();
+      } else {
+        return usuariosBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+     */
+    public br.com.soft.walter.GrpcUsuario getUsuarios(int index) {
+      if (usuariosBuilder_ == null) {
+        return usuarios_.get(index);
+      } else {
+        return usuariosBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+     */
+    public Builder setUsuarios(
+        int index, br.com.soft.walter.GrpcUsuario value) {
+      if (usuariosBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUsuariosIsMutable();
+        usuarios_.set(index, value);
+        onChanged();
+      } else {
+        usuariosBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+     */
+    public Builder setUsuarios(
+        int index, br.com.soft.walter.GrpcUsuario.Builder builderForValue) {
+      if (usuariosBuilder_ == null) {
+        ensureUsuariosIsMutable();
+        usuarios_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        usuariosBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+     */
+    public Builder addUsuarios(br.com.soft.walter.GrpcUsuario value) {
+      if (usuariosBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUsuariosIsMutable();
+        usuarios_.add(value);
+        onChanged();
+      } else {
+        usuariosBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+     */
+    public Builder addUsuarios(
+        int index, br.com.soft.walter.GrpcUsuario value) {
+      if (usuariosBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUsuariosIsMutable();
+        usuarios_.add(index, value);
+        onChanged();
+      } else {
+        usuariosBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+     */
+    public Builder addUsuarios(
+        br.com.soft.walter.GrpcUsuario.Builder builderForValue) {
+      if (usuariosBuilder_ == null) {
+        ensureUsuariosIsMutable();
+        usuarios_.add(builderForValue.build());
+        onChanged();
+      } else {
+        usuariosBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+     */
+    public Builder addUsuarios(
+        int index, br.com.soft.walter.GrpcUsuario.Builder builderForValue) {
+      if (usuariosBuilder_ == null) {
+        ensureUsuariosIsMutable();
+        usuarios_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        usuariosBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+     */
+    public Builder addAllUsuarios(
+        java.lang.Iterable<? extends br.com.soft.walter.GrpcUsuario> values) {
+      if (usuariosBuilder_ == null) {
+        ensureUsuariosIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, usuarios_);
+        onChanged();
+      } else {
+        usuariosBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+     */
+    public Builder clearUsuarios() {
+      if (usuariosBuilder_ == null) {
+        usuarios_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        usuariosBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+     */
+    public Builder removeUsuarios(int index) {
+      if (usuariosBuilder_ == null) {
+        ensureUsuariosIsMutable();
+        usuarios_.remove(index);
+        onChanged();
+      } else {
+        usuariosBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+     */
+    public br.com.soft.walter.GrpcUsuario.Builder getUsuariosBuilder(
+        int index) {
+      return getUsuariosFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+     */
+    public br.com.soft.walter.GrpcUsuarioOrBuilder getUsuariosOrBuilder(
+        int index) {
+      if (usuariosBuilder_ == null) {
+        return usuarios_.get(index);  } else {
+        return usuariosBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+     */
+    public java.util.List<? extends br.com.soft.walter.GrpcUsuarioOrBuilder> 
+         getUsuariosOrBuilderList() {
+      if (usuariosBuilder_ != null) {
+        return usuariosBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(usuarios_);
+      }
+    }
+    /**
+     * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+     */
+    public br.com.soft.walter.GrpcUsuario.Builder addUsuariosBuilder() {
+      return getUsuariosFieldBuilder().addBuilder(
+          br.com.soft.walter.GrpcUsuario.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+     */
+    public br.com.soft.walter.GrpcUsuario.Builder addUsuariosBuilder(
+        int index) {
+      return getUsuariosFieldBuilder().addBuilder(
+          index, br.com.soft.walter.GrpcUsuario.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .br.com.soft.walter.GrpcUsuario usuarios = 4;</code>
+     */
+    public java.util.List<br.com.soft.walter.GrpcUsuario.Builder> 
+         getUsuariosBuilderList() {
+      return getUsuariosFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        br.com.soft.walter.GrpcUsuario, br.com.soft.walter.GrpcUsuario.Builder, br.com.soft.walter.GrpcUsuarioOrBuilder> 
+        getUsuariosFieldBuilder() {
+      if (usuariosBuilder_ == null) {
+        usuariosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            br.com.soft.walter.GrpcUsuario, br.com.soft.walter.GrpcUsuario.Builder, br.com.soft.walter.GrpcUsuarioOrBuilder>(
+                usuarios_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        usuarios_ = null;
+      }
+      return usuariosBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

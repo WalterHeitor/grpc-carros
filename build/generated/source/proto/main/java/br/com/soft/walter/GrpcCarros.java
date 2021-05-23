@@ -20,6 +20,11 @@ public final class GrpcCarros {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_br_com_soft_walter_GrpcCarrosRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_br_com_soft_walter_GrpcUsuario_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_br_com_soft_walter_GrpcUsuario_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_br_com_soft_walter_GrpcCarrosResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -33,14 +38,19 @@ public final class GrpcCarros {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020grpcCarros.proto\022\022br.com.soft.walter\"2" +
+      "\n\020grpcCarros.proto\022\022br.com.soft.walter\"r" +
       "\n\021GrpcCarrosRequest\022\016\n\006modelo\030\001 \001(\t\022\r\n\005p" +
-      "laca\030\002 \001(\t\"?\n\022GrpcCarrosResponse\022\016\n\006mode" +
-      "lo\030\001 \001(\t\022\r\n\005placa\030\002 \001(\t\022\n\n\002id\030\003 \001(\0032m\n\rC" +
-      "arrosService\022\\\n\tadicionar\022%.br.com.soft." +
-      "walter.GrpcCarrosRequest\032&.br.com.soft.w" +
-      "alter.GrpcCarrosResponse\"\000B(\n\022br.com.sof" +
-      "t.walterB\nGrpcCarrosP\001\242\002\003HLWb\006proto3"
+      "laca\030\002 \001(\t\022\013\n\003cor\030\003 \001(\t\0221\n\010usuarios\030\004 \003(" +
+      "\0132\037.br.com.soft.walter.GrpcUsuario\"7\n\013Gr" +
+      "pcUsuario\022\014\n\004nome\030\001 \001(\t\022\013\n\003cpf\030\002 \001(\t\022\r\n\005" +
+      "email\030\003 \001(\t\"r\n\022GrpcCarrosResponse\022\016\n\006mod" +
+      "elo\030\001 \001(\t\022\r\n\005placa\030\002 \001(\t\022\n\n\002id\030\003 \001(\003\0221\n\010" +
+      "usuarios\030\004 \003(\0132\037.br.com.soft.walter.Grpc" +
+      "Usuario2m\n\rCarrosService\022\\\n\tadicionar\022%." +
+      "br.com.soft.walter.GrpcCarrosRequest\032&.b" +
+      "r.com.soft.walter.GrpcCarrosResponse\"\000B(" +
+      "\n\022br.com.soft.walterB\nGrpcCarrosP\001\242\002\003HLW" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -51,13 +61,19 @@ public final class GrpcCarros {
     internal_static_br_com_soft_walter_GrpcCarrosRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_br_com_soft_walter_GrpcCarrosRequest_descriptor,
-        new java.lang.String[] { "Modelo", "Placa", });
-    internal_static_br_com_soft_walter_GrpcCarrosResponse_descriptor =
+        new java.lang.String[] { "Modelo", "Placa", "Cor", "Usuarios", });
+    internal_static_br_com_soft_walter_GrpcUsuario_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_br_com_soft_walter_GrpcUsuario_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_br_com_soft_walter_GrpcUsuario_descriptor,
+        new java.lang.String[] { "Nome", "Cpf", "Email", });
+    internal_static_br_com_soft_walter_GrpcCarrosResponse_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_br_com_soft_walter_GrpcCarrosResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_br_com_soft_walter_GrpcCarrosResponse_descriptor,
-        new java.lang.String[] { "Modelo", "Placa", "Id", });
+        new java.lang.String[] { "Modelo", "Placa", "Id", "Usuarios", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

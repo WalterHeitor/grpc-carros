@@ -22,6 +22,4 @@ open class FindCarroUseCaseImp(private val carroRepository: CarroRepository):Car
         println("--------- carro 4 $carro")
         return carro
     }
-
-
 }
