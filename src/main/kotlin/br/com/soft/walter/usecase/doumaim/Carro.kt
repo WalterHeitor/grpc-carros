@@ -11,7 +11,7 @@ class Carro(
     @field:NotBlank
     @Column(nullable = false)
     val placa: String,
-    @field:OneToMany(cascade = [CascadeType.ALL])
+    @field:OneToMany(cascade = [CascadeType.ALL], mappedBy = "carro")
     val usuario: List<Usuario>
 ) {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

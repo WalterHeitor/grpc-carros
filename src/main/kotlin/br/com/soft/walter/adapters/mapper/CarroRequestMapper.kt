@@ -16,6 +16,7 @@ fun GrpcUsuario.toUsuario() : Usuario{
     return Usuario(
         nome = this.nome,
         cpf = this.cpf,
-        email = this.email
+        email = this.email,
+        carro = null
     )
 }

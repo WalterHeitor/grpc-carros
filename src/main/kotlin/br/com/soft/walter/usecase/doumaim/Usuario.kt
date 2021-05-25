@@ -9,7 +9,9 @@ class Usuario(
     @Column(nullable = false)
     val nome: String,
     val cpf: String,
-    val email: String
+    val email: String,
+    @field:ManyToOne
+    val carro: Carro?
 
 ) {
     @Id

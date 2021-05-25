@@ -19,7 +19,7 @@ public final class Carro {
     @javax.persistence.Column(nullable = false)
     private final java.lang.String placa = null;
     @org.jetbrains.annotations.NotNull()
-    @javax.persistence.OneToMany(cascade = {javax.persistence.CascadeType.ALL})
+    @javax.persistence.OneToMany(cascade = {javax.persistence.CascadeType.ALL}, mappedBy = "carro")
     private final java.util.List<br.com.soft.walter.usecase.doumaim.Usuario> usuario = null;
     
     @org.jetbrains.annotations.Nullable()
